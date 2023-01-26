@@ -4,11 +4,12 @@ from bs4 import BeautifulSoup
 from discord import SyncWebhook
 
 WEBHOOK_URL = ''
-archive_file = os.path.join(os.path.dirname(__file__),'genre_event.txt')
+ARCHIVE_FILE = os.path.join(os.path.dirname(__file__),'genre_event.txt')
 
 def main():
-    with open(archive_file,'r') as f:
-        old_events = f.read().splitlines() 
+    if os.path.exists(ARCHIVE_FILE):
+        with open(ARCHIVE_FILE,'r') as f:
+            old_events = f.read().splitlines() 
     url = 'https://www.steamcardexchange.net/index.php?showcase-filter-genre-999'
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
