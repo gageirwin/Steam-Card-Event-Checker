@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from discord import SyncWebhook
 
 WEBHOOK_URL = ''
-ARCHIVE_FILE = os.path.join(os.path.dirname(__file__),'genre_event.txt')
+ARCHIVE_FILE = os.path.join(os.path.dirname(__file__),'events.txt')
 
 def main():
     if os.path.exists(ARCHIVE_FILE):
